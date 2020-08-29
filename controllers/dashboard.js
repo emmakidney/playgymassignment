@@ -3,7 +3,9 @@
 const logger = require("../utils/logger");
 
 const homer = {
- date :'01/06/2020',
+  title: 'homer',
+  row: [
+ date: '01/06/2020',
  weight: '123.3',
  chest: '45.0',
  thigh: '12.5',
@@ -11,6 +13,7 @@ const homer = {
  waist: '32',
  hips: '38',
  trend: 'true',
+    ]
 };
 
 const dashboard = {
