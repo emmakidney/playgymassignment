@@ -15,7 +15,7 @@ const assessmentStore = {
   
   removeRow(id, rowId) {
     const assessment = this.getAssessment(id);
-    _.remove(assessment.row, { id: rowId});
+    _.remove(assessment.rows, { id: rowId });
   },
 };
 
