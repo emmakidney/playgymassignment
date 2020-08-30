@@ -5,7 +5,7 @@ const router = express.Router();
 
 const dashboard = require("./controllers/dashboard.js");
 const about = require("./controllers/about.js");
-const assessment = require('./controllers/assessment.js');
+const assessment = require("./controllers/assessment.js");
 
 router.get("/", dashboard.index);
 router.get("/dashboard", dashboard.index);
