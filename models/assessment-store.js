@@ -1,3 +1,4 @@
+
 'use strict';
 
 const assessmentStore = {
@@ -17,6 +18,12 @@ const assessmentStore = {
     }
     
     return foundAssessment;
+  },
+  
+  removeEntry(id, entryId) {
+    const assessment = this.getAssessment(id);
+  
+    //TO DO: remove the entry with id entryId from the Assessment
   },
 };
 

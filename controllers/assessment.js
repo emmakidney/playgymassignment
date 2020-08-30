@@ -13,6 +13,14 @@ const assessment = {
     };
     response.render('assessment', viewData);
   },
+  
+  deleteEntry(request, response) {
+    const assessmentId = request.params.id;
+    const entryId = request.params.entryid;
+    logger.debug('Deleting Entry ${entryId} from Member ${assessmentId}');
+    assessmentStore.removeEntry(assessmentId, entryId);
+    response.redirect('/assessment/' + assessmentId);
+  },
 };
 
 module.exports = assessment;
