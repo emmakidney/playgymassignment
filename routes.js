@@ -11,5 +11,5 @@ router.get("/", dashboard.index);
 router.get("/dashboard", dashboard.index);
 router.get("/about", about.index);
 router.get("/assessment/:id", assessment.index);
-
+router.get("assessment/:")
 module.exports = router;

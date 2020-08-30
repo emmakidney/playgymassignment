@@ -1,7 +1,7 @@
 "use strict";
 
 const logger = require('../utils/logger');
-const assessmentStore = require('../models/assessment-store.js');
+const assessmentStore = require('../models/assessment-store');
 
 const dashboard = {
   index(request, response) {
