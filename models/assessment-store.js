@@ -1,6 +1,6 @@
-
 'use strict';
 
+const _ = require('lodash');
 const assessmentStore = {
   
   allAssessments: require('./assessment-store.json').allAssessments,
@@ -10,20 +10,12 @@ const assessmentStore = {
   },
   
   getAssessment(id) {
-    let foundAssessment = null;
-    for (let assessment of this.allAssessments) {
-      if(id == assessment.id) {
-        foundAssessment = assessment;
-      }
-    }
-    
-    return foundAssessment;
+    return _.find(this.allAssessments, { id: id });
   },
   
-  removeEntry(id, entryId) {
+  removeRow(id, rowId) {
     const assessment = this.getAssessment(id);
-  
-    //TO DO: remove the entry with id entryId from the Assessment
+    _.remove(assessment.row, { id: rowId});
   },
 };
 

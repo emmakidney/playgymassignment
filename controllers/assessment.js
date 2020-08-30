@@ -14,11 +14,11 @@ const assessment = {
     response.render('assessment', viewData);
   },
   
-  deleteEntry(request, response) {
+  deleteRow(request, response) {
     const assessmentId = request.params.id;
-    const entryId = request.params.entryid;
-    logger.debug('Deleting Entry ${entryId} from Member ${assessmentId}');
-    assessmentStore.removeEntry(assessmentId, entryId);
+    const rowId = request.params.rowid;
+    logger.debug('Deleting Row ${rowId} from Member ${assessmentId}');
+    assessmentStore.removeRow(assessmentId, rowId);
     response.redirect('/assessment/' + assessmentId);
   },
 };
