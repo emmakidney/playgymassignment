@@ -1,16 +1,16 @@
 "use strict";
 
 const logger = require('../utils/logger');
-const homer = require('../models/assessment-store.js');
+const allAssessments = require('../models/assessment-store.js');
 
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const viewData = {
       title: "Assessment Dashboard",
-      assessment: homer,
+      assessment: allAssessments
     };
-    logger.info('about to render', homer);
+    logger.info('about to render', allAssessments);
     response.render("dashboard", viewData);
   },
 };

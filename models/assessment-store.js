@@ -16,4 +16,20 @@ const homer = {
     ],
 };
 
-module.exports = homer;
+const bart = {
+  title: 'bart',
+  rows: [
+    { date: '01.06.2020',
+ weight: '120',
+ chest: '43.0',
+ thigh: '10.5',
+ upperarm: '20.3',
+ waist: '30',
+ hips: '35',
+ trend: 'true', },
+    ],
+};
+
+const allAssessments = [homer, bart];
+
+module.exports = allAssessments;

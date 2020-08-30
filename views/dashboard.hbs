@@ -1,8 +1,39 @@
 {{> menu id="dashboard"}}
 
+
 <section class="ui segment">
   <h2 class="ui header">
-    Homer Simpson's Assessments
+    {{title}}
   </h2>
-  {{> assessment-table}}
+  <table class="ui celled table">
+  <thead>
+    <tr>
+  <th> Date </th>
+  <th> Weight </th>
+  <th> Chest </th>
+  <th> Thigh </th>
+  <th> Upper Arm </th>
+  <th> Waist </th>
+  <th> Hips </th>
+  <th> Trend </th>
+  <th> Comment </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+  <tr>
+    <td> {{date}} </td>
+    <td> {{weight}} </td>
+    <td> {{chest}} </td>
+    <td> {{thigh}} </td>
+    <td> {{upperarm}} </td>
+    <td> {{waist}} </td>
+    <td> {{hips}} </td>
+    <td> {{trend}} </td>
+    <td> {{comment}} </td>
+  </tr>
+    {{/each}}
+</tbody>
+</table>
 </section>
+{{/each}}
