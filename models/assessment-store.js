@@ -18,16 +18,25 @@ const assessmentStore = {
   
   removeRow(id, rowId) {
     const assessment = this.getAssessment(id);
-    _.remove(assessment.rows, { id: rowId });
+    const rows = assessment.rows;
+    _.remove(rows, { id: songId});
+    this.store.save();
   },
   
   removeAssessment(id) {
-    _.remove(this.allAssessments, { id: id});
+    const assessment = this.getAssessment(id);
+    this.store.remove(this.collection, assessment);
+    this.store.save();
   },
   
   addRow(id, row) {
     const assessment = this.getAssessment(id);
     assessment.rows.push(row);
+    this.store.save();
+  },
+  
+  getUserAssessments(userid) {
+    return this.store.findBy(this.collection, { userid: userid});
   },
 };
 
