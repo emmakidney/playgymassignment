@@ -1,4 +1,4 @@
-{{#each assessments}}
+{{#each assessment}}
 <section class="ui stacked segment">
   <h2 class="ui header">
     {{title}}
@@ -7,6 +7,7 @@
     <i class="icon folder open"></i>
   </a>
   <a href="/dashboard/deletassessment/{{id}}" class="ui icon button">
-    <i class=
+    <i class="icon trash"></i>
   </a>
 </section>
+{{/each}}
