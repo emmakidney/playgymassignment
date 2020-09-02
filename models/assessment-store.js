@@ -19,7 +19,7 @@ const assessmentStore = {
   },
   
   removeAssessment(id) {
-    _.remove(this.assessmentCollection, { id: id});
+    _.remove(this.allAssessments, { id: id});
   },
 };
 
