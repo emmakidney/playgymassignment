@@ -21,6 +21,11 @@ const assessmentStore = {
   removeAssessment(id) {
     _.remove(this.allAssessments, { id: id});
   },
+  
+  addRow(id, row) {
+    const assessment = this.getAssessment(id);
+    assessment.rows.push(row);
+  },
 };
 
 module.exports = assessmentStore;
