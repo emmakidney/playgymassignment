@@ -2,6 +2,7 @@
 
 const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store');
+const uuid = require('uuid');
 
 const assessment = {
   index(request, response) {
@@ -26,6 +27,7 @@ const assessment = {
     const assessmentId = request.params.id;
     const assessment = assessmentStore.getAssessment(assessmentId);
     const newRow = {
+      id: uuid(),
       date : request.body.date,
       weight: request.body.weight,
       chest : request.body.chest,
