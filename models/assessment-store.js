@@ -1,16 +1,19 @@
 'use strict';
 
 const _ = require('lodash');
+const JsonStore = require('./json-store');
+
 const assessmentStore = {
   
-  allAssessments: require('./assessment-store.json').allAssessments,
+  store: new JsonStore('./models/assessment-store.json', { allAssessments: [] }),
+  collection: 'allAssessments',
   
   getAllAssessments(){
-    return this.allAssessments;
+    return this.store.findAll(this.collection);
   },
   
   getAssessment(id) {
-    return _.find(this.allAssessments, { id: id });
+    return this.store.findOneBy(this.collection, { id: id });
   },
   
   removeRow(id, rowId) {

@@ -27,7 +27,7 @@ const assessment = {
     const assessmentId = request.params.id;
     const assessment = assessmentStore.getAssessment(assessmentId);
     const newRow = {
-      id: uuid(),
+      id: uuid.v1(),
       date : request.body.date,
       weight: request.body.weight,
       chest : request.body.chest,
