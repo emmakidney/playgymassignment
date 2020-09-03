@@ -2,13 +2,15 @@
 
 const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store');
+const accounts = require ('./accounts.js');
 
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
+    const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: "Assessment Dashboard",
-      assessment: assessmentStore.getAllAssessments(),
+      assessment: assessmentStore.getUserAssessments(loggedInUser.id),
     };
     logger.info('about to render', assessmentStore.getAllAssessments());
     response.render("dashboard", viewData);
