@@ -1,5 +1,41 @@
 {
   "allAssessments": [
+    {
+      "id": "1e6ed5a0-28fe-4527-8ce8-6cb5c800b5be",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "title": "Marge's Assessments",
+      "rows": [
+        {
+        "date": "01.06.2020",
+        "weight": "120",
+        "chest": "34",
+        "thigh": "30",
+        "upperarm": "25",
+        "waist": "32",
+        "hips": "42",
+        "trend": "good",
+        "comment": "NA"
+        }
+      ]
+    },
+    {
+      "id": "1e6ed5a0-28fe-4527-8ce8-6cb5c800b5ba",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "Homer's Assessments",
+      "rows": [
+        {
+        "date": "01.06.2020",
+        "weight": "130",
+        "chest": "35",
+        "thigh": "33",
+        "upperarm": "27",
+        "waist": "30",
+        "hips": "42",
+        "trend": "good",
+        "comment": "NA"
+        }
+      ]
+    }
     
   ]
 }
