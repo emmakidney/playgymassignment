@@ -48,17 +48,25 @@ const analytics = {
   isIdealWeight(id) {
     const user = userStore.getUserById(id);
     const assessment = assessmentStore.getUserAssessments(id);
-    const minHeight = 1;
+    const minHeight = 60;
     let idealWeight = 45.5;
     const metersToInches = 39.37;
     const kgPerExtraInch = 2.3;
     let isIdealWeight = "";
     
-    if (member.gender === ("Male" || "male" || "m")) {
+    if (user.gender === ("Male" || "male" || "m")) {
       idealWeight = 50;
     } else {
       idealWeight = 45.5;
     }
-    if (metersToInches * (user.height / 100) > mineHeight)
+    if (metersToInches * (user.height / 100) > minHeight) {
+      idealWeight += (metersToInches * (user.height / 100) - 60) * kgPerExtraInch;
+    }
+    if (assessment.length === 0) {
+      isIdealWeight = user.startingWeight <= idealWeight + 0.2;
+    } else {
+      isIdealWeight = assessment[assessment.lenght -1].weight;
+    }
+    return isIdealWeight;
   }
 }
