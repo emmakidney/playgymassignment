@@ -7,4 +7,7 @@ const uuid = require('uuid');
 
 const analytiics = {
   
+  generateMemberStats(request, response) {
+    
+  }
 }
