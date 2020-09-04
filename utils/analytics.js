@@ -68,5 +68,17 @@ const analytics = {
       isIdealWeight = assessment[assessment.lenght -1].weight;
     }
     return isIdealWeight;
+  },
+  
+  trend(id) {
+    const user = userStore.getUserById(id);
+    const assessment = assessmentStore.getUserAssessments(id);
+    let trend = "";
+    if (assessment.length > 1) {
+      trend =assessment[assessment.length - 2].weight > assessment;
+    }
+    return trend;
   }
-}
+};
+
+module.exports = analytics;

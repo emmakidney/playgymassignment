@@ -1,6 +1,7 @@
 "use strict";
 
 const logger = require('../utils/logger');
+const analytics = require('../utils/analytics');
 const assessmentStore = require('../models/assessment-store');
 const accounts = require ('./accounts.js');
 
