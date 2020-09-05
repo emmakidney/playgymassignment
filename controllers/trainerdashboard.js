@@ -11,8 +11,8 @@ const trainerdashboard = {
   index(request, response) {
     logger.info("trainer member dashboard rendering");
     const loggedInTrainer = accounts.getCurrentTrainer(request);
-    const user = userStore.getUserById(request.params.id);
-    const assessments = assessmentStore.getAllAssessments(user.id);
+    const trainer = trainerStore.getTrainerById(request.params.id);
+    const assessments = assessmentStore.getAllAssessments;
     const viewData = {
       title: "Trainer Dashboard",
       assessments: assessmentStore.getAllAssessments,

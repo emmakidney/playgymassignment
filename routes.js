@@ -24,7 +24,7 @@ router.get("/assessment/:id", assessment.index);
 router.get("/assessment/:id/deleterow/:rowid", assessment.deleteRow);
 router.get("/dashboard/deleteassessment/:id", dashboard.deleteAssessment);
 router.post("/assessment/:id/addrow", assessment.addRow);
-router.get("/trainerdashboard/:id", trainerdashboard.index);
+router.get("/trainerdashboard/", trainerdashboard.index);
 
 
 module.exports = router;

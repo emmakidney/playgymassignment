@@ -8,6 +8,19 @@ const uuid = require('uuid');
 
 const analytics = {
   
+  index(request, response) {
+    const assessmentId = request.params.id;
+    const loggedInUser = accounts.getCurrentUser(request);
+    logger.debug('Assessment id = ' + assessmentId);
+    const viewData = {
+      title: 'Assessment',
+      assessment: assessmentStore.getAssessment(assessmentId),
+      bmi: analytics.bmi(loggedInUser.id),
+      bmiCategory: analytics.bmiCategory(loggedInUser.id),
+    };
+    response.render('analytics', viewData);
+  },
+  
   bmi(id) {
     const user = userStore.getUserById(id);
     const assessment = assessmentStore.getUserAssessments(id);
