@@ -16,7 +16,7 @@ const assessment = {
       title: 'Assessment',
       assessment: assessmentStore.getAssessment(assessmentId),
       bmi: analytics.bmi(loggedInUser.id),
-      firstName: userStore.firstName,
+      bmiCategory: analytics.bmiCategory(loggedInUser.id),
     };
     response.render('assessment', viewData);
   },
