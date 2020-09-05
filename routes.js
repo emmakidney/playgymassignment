@@ -9,6 +9,7 @@ const assessment = require("./controllers/assessment.js");
 const accounts = require("./controllers/accounts.js");
 const analytics = require("./utils/analytics.js");
 
+
 router.get('/', accounts.index);
 router.get('/login', accounts.login);
 router.get('/signup', accounts.signup);
@@ -22,7 +23,7 @@ router.get("/assessment/:id", assessment.index);
 router.get("/assessment/:id/deleterow/:rowid", assessment.deleteRow);
 router.get("/dashboard/deleteassessment/:id", dashboard.deleteAssessment);
 router.post("/assessment/:id/addrow", assessment.addRow);
-
+router.get("/trainerdashboard/:id", trainerdashboard.index);
 
 
 module.exports = router;
