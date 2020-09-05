@@ -7,6 +7,7 @@ const dashboard = require("./controllers/dashboard.js");
 const about = require("./controllers/about.js");
 const assessment = require("./controllers/assessment.js");
 const accounts = require("./controllers/accounts.js");
+const analytics = require("./utils/analytics.js");
 
 router.get('/', accounts.index);
 router.get('/login', accounts.login);
