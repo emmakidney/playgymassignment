@@ -3,7 +3,7 @@
 const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store');
 const userStore = require('../models/user-store');
-const accounts = require ('./accounts.js');
+const accounts = require ('../controllers/accounts.js');
 const uuid = require('uuid');
 
 const analytics = {
