@@ -3,15 +3,20 @@
 const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store');
 const uuid = require('uuid');
+const analytics = require('../utils/analytics.js');
+const accounts = require('./accounts.js');
+const userStore = require('../models/user-store');
 
 const assessment = {
   index(request, response) {
     const assessmentId = request.params.id;
+    const loggedInUser = accounts.getCurrentUser(request);
     logger.debug('Assessment id = ' + assessmentId);
     const viewData = {
       title: 'Assessment',
       assessment: assessmentStore.getAssessment(assessmentId),
-      
+      bmi: analytics.bmi(loggedInUser.id),
+      firstName: userStore.firstName,
     };
     response.render('assessment', viewData);
   },
