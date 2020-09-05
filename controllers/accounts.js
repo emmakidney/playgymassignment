@@ -43,25 +43,20 @@ const accounts = {
 
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
+    const trainer = trainerStore.getTrainerByEmail(request.body.email);
     if (user) {
       response.cookie('assessment', user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect('/dashboard');
+    } else if (trainer) {
+      response.cookie('assessment', trainer.email);
+      logger.info(`logging in ${trainer.email}`);
+      response.redirect('/trainerdashboard'); 
     } else {
       response.redirect('/login');
     }
   },
   
-  authenticateTrainer(request, response) {
-    const trainer = trainerStore.getUserByEmail(request.body.email);
-    if (trainer) {
-      response.cookie('assessment', trainer.email);
-      logger.info(`logging in ${trainer.email}`);
-      response.redirect('/trainer-dashboard');
-    } else {
-      response.redirect('/login');
-    }
-  },
 
   getCurrentUser(request) {
     const userEmail = request.cookies.assessment;

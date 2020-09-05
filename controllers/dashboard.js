@@ -13,7 +13,7 @@ const dashboard = {
       title: "Assessment Dashboard",
       assessment: assessmentStore.getUserAssessments(loggedInUser.id),
     };
-    logger.info('about to render', assessmentStore.getAllAssessments());
+    logger.info('about to render', assessmentStore.getUserAssessments());
     response.render("dashboard", viewData);
   },
   
