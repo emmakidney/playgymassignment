@@ -11,6 +11,7 @@ const assessment = {
     const viewData = {
       title: 'Assessment',
       assessment: assessmentStore.getAssessment(assessmentId),
+      
     };
     response.render('assessment', viewData);
   },
