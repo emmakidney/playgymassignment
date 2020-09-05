@@ -5,11 +5,11 @@ const JsonStore = require('./json-store');
 
 const assessmentStore = {
   
-  store: new JsonStore('./models/assessment-store.json', { allAssessments: [] }),
-  collection: 'allAssessments',
+  store: new JsonStore('./models/assessment-store.json', { assessments: [] }),
+  collection: 'assessments',
   
   getAllAssessments(){
-    return this.store.findAll(this.collection);
+   return this.store.findAll(this.collection);
   },
   
   getAssessment(id) {
@@ -19,7 +19,7 @@ const assessmentStore = {
   removeRow(id, rowId) {
     const assessment = this.getAssessment(id);
     const rows = assessment.rows;
-    _.remove(rows, { id: songId});
+    _.remove(rows, { id: rowId});
     this.store.save();
   },
   
