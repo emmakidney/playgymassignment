@@ -78,7 +78,7 @@ const analytics = {
     if (assessment.length === 0) {
       isIdealWeight = user.startingWeight <= idealWeight + 0.2;
     } else {
-      isIdealWeight = assessment[assessment.lenght -1].weight;
+      isIdealWeight = assessment[assessment.lenght -1].weight <= idealWeight + 0.2;
     }
     return isIdealWeight;
   },

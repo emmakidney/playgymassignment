@@ -12,13 +12,14 @@ const dashboard = {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
-      title: "Assessment Dashboard",
+      title: "User Dashboard",
       user: userStore.getUserById(loggedInUser.id),
       assessment: assessmentStore.getUserAssessments(loggedInUser.id),
       bmi: analytics.bmi(loggedInUser.id),
-      bmiCategory: analytics.bmiCategory(loggedIn)
+      bmiCategory: analytics.bmiCategory(loggedInUser.id),
+      isIdealWeight: analytics.isIdealWeight(loggedInUser.id)
     };
-    logger.info('about to render', assessmentStore.getUserAssessments());
+    logger.info('about to render ${userid}');
     response.render("dashboard", viewData);
   },
   
