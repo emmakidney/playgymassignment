@@ -16,9 +16,9 @@ const assessment = {
       title: 'Assessment',
       user: userStore.getUserById(loggedInUser.id),
       assessment: assessmentStore.getAssessment(assessmentId),
-      bmi: analytics.bmi(loggedInUser.id, assessmentId),
-      bmiCategory: analytics.bmiCategory(loggedInUser.id, assessmentId),
-      isIdealWeight: analytics.isIdealWeight(loggedInUser.id)
+      bmi: userStore.bmi(loggedInUser.id, assessmentId),
+      bmiCategory: userStore.bmiCategory(loggedInUser.id, assessmentId),
+      isIdealWeight: userStore.isIdealWeight(loggedInUser.id)
     };
     response.render('assessment', viewData);
   },

@@ -16,8 +16,8 @@ const dashboard = {
       title: 'Dashboard',
       user: userStore.getUserById(loggedInUser.id),
       assessment: assessmentStore.getAssessment(assessmentId),
-      bmi: analytics.bmi(loggedInUser.id, assessmentId),
-      bmiCategory: analytics.bmiCategory(loggedInUser.id, assessmentId),
+      bmi: userStore.bmi(loggedInUser.id, assessmentId),
+      bmiCategory: userStore.bmiCategory(loggedInUser.id, assessmentId),
       isIdealWeight: analytics.isIdealWeight(loggedInUser.id)
     };
     logger.info('about to render ${userid}');
