@@ -25,11 +25,11 @@ const analytics = {
     const user = userStore.getUserById(id);
     const assessment = assessmentStore.getUserAssessments(id);
     if (assessment.length === 0) {
-      const bmi = Math.round(user.startingWeight / (user.height / 100) * (user.height / 100));
-      return bmi;
+      const bmi = user.startingWeight / ((user.height / 100) * (user.height / 100));
+      return Math.round(bmi * 100) / 100;
     } else {
-      const bmi = ((assessment[assessment.length - 1].weight/ (user.height / 100) * (user.height / 100)));
-      return Math.round(Number('bmi'));
+      const bmi = assessment[assessment.length - 1].weight/ ((user.height / 100) * (user.height / 100));
+      return Math.round(bmi * 100) / 100;
     }
   },
   
@@ -58,9 +58,9 @@ const analytics = {
     }
   },
   
-  isIdealWeight(id) {
-    const user = userStore.getUserById(id);
-    const assessment = assessmentStore.getUserAssessments(id);
+  isIdealWeight(userid) {
+    const user = userStore.getUserById(userid);
+    const assessment = assessmentStore.getUserAssessments(userid);
     const minHeight = 60;
     let idealWeight = 45.5;
     const metersToInches = 39.37;
@@ -78,7 +78,7 @@ const analytics = {
     if (assessment.length === 0) {
       isIdealWeight = user.startingWeight <= idealWeight + 0.2;
     } else {
-      isIdealWeight = assessment[assessment.lenght -1].weight <= idealWeight + 0.2;
+      isIdealWeight = assessment[assessment.length - 1].weight <= idealWeight + 0.2;
     }
     return isIdealWeight;
   },
