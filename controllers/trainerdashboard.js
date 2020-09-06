@@ -13,9 +13,11 @@ const trainerdashboard = {
     const loggedInTrainer = accounts.getCurrentTrainer(request);
     const trainer = trainerStore.getTrainerById(request.params.id);
     const assessments = assessmentStore.getAllAssessments;
+    const users = userStore.getAllUsers;
     const viewData = {
       title: "Trainer Dashboard",
-      assessments: assessmentStore.getAllAssessments,
+      assessments: assessmentStore.getAllAssessments(),
+      users: userStore.getAllUsers(),
     };
     response.render("trainerdashboard", viewData);
   },
