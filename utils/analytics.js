@@ -25,10 +25,10 @@ const analytics = {
     const user = userStore.getUserById(id);
     const assessment = assessmentStore.getUserAssessments(id);
     if (assessment.length === 0) {
-      const bmi = Math.round((Number('user.startingWeight') / (Number('user.height') / 100) * (Number('user.height') / 100)));
+      const bmi = Math.round(user.startingWeight / (user.height / 100) * (user.height / 100));
       return bmi;
     } else {
-      const bmi = ((Number('assessment[assessment.length - 1].weight')/ (Number('user.height') / 100) * (Number('user.height') / 100)));
+      const bmi = ((assessment[assessment.length - 1].weight/ (user.height / 100) * (user.height / 100)));
       return Math.round(Number('bmi'));
     }
   },
