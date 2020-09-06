@@ -7,17 +7,6 @@ const accounts = require ('../controllers/accounts.js');
 const uuid = require('uuid');
 
 const analytics = {
-  bmi(id) {
-    const user = userStore.getUserById(id);
-    const assessment = assessmentStore.getUserAssessments(id);
-    if (assessment.length === 0) {
-      const bmi = Math.round((user.startingWeight / (user.height) * (user.height)) * 1000);
-      return bmi;
-    } else {
-      const bmi = Math.round((assessment.weight/ (user.height) * (user.height)) * 1000);
-      return bmi;
-    }
-  },
   
   index(request, response) {
     const assessmentId = request.params.id;
@@ -26,13 +15,23 @@ const analytics = {
     const viewData = {
       title: 'Assessment',
       assessment: assessmentStore.getAssessment(assessmentId),
-      bmi: bmi(loggedInUser.id),
-      bmiCategory: analytics.bmiCategory(loggedInUser.id),
+      bmi: this.bmi(loggedInUser.id),
+      bmiCategory: this.bmiCategory(loggedInUser.id),
     };
     response.render('analytics', viewData);
   },
   
-  
+  bmi(id) {
+    const user = userStore.getUserById(id);
+    const assessment = assessmentStore.getUserAssessments(id);
+    if (assessment.length === 0) {
+      const bmi = Math.round((user.startingWeight / (user.height / 100) * (user.height / 100)));
+      return bmi;
+    } else {
+      const bmi = Math.round((assessment.weight/ (user.height / 100) * (user.height / 100)));
+      return bmi;
+    }
+  },
   
   bmiCategory(id) {
     const user = userStore.getUserById(id);
