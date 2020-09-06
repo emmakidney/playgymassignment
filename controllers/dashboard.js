@@ -13,10 +13,10 @@ const dashboard = {
     const assessmentId = request.params.id;
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
-      title: "User Dashboard",
+      title: 'Dashboard',
       user: userStore.getUserById(loggedInUser.id),
-      assessment: assessmentStore.getAssessment(assessmentId),
-      bmi: analytics.bmi(loggedInUser.id, assessmentId),
+      assessment: assessmentStore.getUserAssessments(loggedInUser.id).reverse(),
+      bmi: analytics.bmi(loggedInUser.id),
       bmiCategory: analytics.bmiCategory(loggedInUser.id),
       isIdealWeight: analytics.isIdealWeight(loggedInUser.id)
     };

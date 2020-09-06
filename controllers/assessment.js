@@ -9,14 +9,16 @@ const userStore = require('../models/user-store');
 
 const assessment = {
   index(request, response) {
-    const assessmentId = request.params.id;
+    logger.debug('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
-    logger.debug('Assessment id = ' + assessmentId);
+    
     const viewData = {
       title: 'Assessment',
-      assessment: assessmentStore.getAssessment(assessmentId),
-      bmi: analytics.bmi(assessmentId),
-      bmiCategory: analytics.bmiCategory(assessmentId),
+      user: userStore.getUserById(loggedInUser.id),
+      assessment: assessmentStore.getUserAssessments(loggedInUser.id).reverse(),
+      bmi: analytics.bmi(loggedInUser.id),
+      bmiCategory: analytics.bmiCategory(loggedInUser.id),
+      isIdealWeight: analytics.isIdealWeight(loggedInUser.id)
     };
     response.render('assessment', viewData);
   },
