@@ -15,7 +15,7 @@ const dashboard = {
     const viewData = {
       title: 'Dashboard',
       user: userStore.getUserById(loggedInUser.id),
-      assessment: assessmentStore.getUserAssessments(loggedInUser.id, assessmentId),
+      assessment: assessmentStore.getUserAssessments(loggedInUser.id),
       bmi: userStore.bmi(loggedInUser.id, assessmentId),
       bmiCategory: userStore.bmiCategory(loggedInUser.id, assessmentId),
       isIdealWeight: userStore.isIdealWeight(loggedInUser.id)
