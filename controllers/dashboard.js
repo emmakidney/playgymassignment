@@ -10,12 +10,13 @@ const uuid = require('uuid');
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
+    const assessmentId = request.params.id;
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: "User Dashboard",
       user: userStore.getUserById(loggedInUser.id),
-      assessment: assessmentStore.getUserAssessments(loggedInUser.id),
-      bmi: analytics.bmi(loggedInUser.id),
+      assessment: assessmentStore.getAssessment(assessmentId),
+      bmi: analytics.bmi(loggedInUser.id, assessmentId),
       bmiCategory: analytics.bmiCategory(loggedInUser.id),
       isIdealWeight: analytics.isIdealWeight(loggedInUser.id)
     };

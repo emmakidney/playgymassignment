@@ -8,22 +8,9 @@ const uuid = require('uuid');
 
 const analytics = {
   
-  index(request, response) {
-    const assessmentId = request.params.id;
-    const loggedInUser = accounts.getCurrentUser(request);
-    logger.debug('Assessment id = ' + assessmentId);
-    const viewData = {
-      title: 'Assessment',
-      assessment: assessmentStore.getAssessment(assessmentId),
-      bmi: this.bmi(loggedInUser.id),
-      bmiCategory: this.bmiCategory(loggedInUser.id),
-    };
-    response.render('analytics', viewData);
-  },
-  
-  bmi(id) {
+  bmi(id, assessmentId) {
     const user = userStore.getUserById(id);
-    const assessment = assessmentStore.getUserAssessments(id);
+    const assessment = assessmentStore.getAssessment(assessmentId);
     if (assessment.length === 0) {
       const bmi = user.startingWeight / ((user.height / 100) * (user.height / 100));
       return Math.round(bmi * 100) / 100;
