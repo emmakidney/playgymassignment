@@ -7,6 +7,17 @@ const accounts = require ('../controllers/accounts.js');
 const uuid = require('uuid');
 
 const analytics = {
+  bmi(id) {
+    const user = userStore.getUserById(id);
+    const assessment = assessmentStore.getUserAssessments(id);
+    if (assessment.length === 0) {
+      const bmi = Math.round((user.startingWeight / (user.height) * (user.height)) * 1000);
+      return bmi;
+    } else {
+      const bmi = Math.round((assessment.weight/ (user.height) * (user.height)) * 1000);
+      return bmi;
+    }
+  },
   
   index(request, response) {
     const assessmentId = request.params.id;
@@ -15,23 +26,13 @@ const analytics = {
     const viewData = {
       title: 'Assessment',
       assessment: assessmentStore.getAssessment(assessmentId),
-      bmi: analytics.bmi(loggedInUser.id),
+      bmi: bmi(loggedInUser.id),
       bmiCategory: analytics.bmiCategory(loggedInUser.id),
     };
     response.render('analytics', viewData);
   },
   
-  bmi(id) {
-    const user = userStore.getUserById(id);
-    const assessment = assessmentStore.getUserAssessments(id);
-    if (assessment.length === 0) {
-      const bmi = ((user.startingWeight / (user.height) * (user.height)) * 1000);
-      return Math.round(bmi);
-    } else {
-      const bmi = ((assessment.weight/ (user.height) * (user.height)) * 1000);
-      return Math.round(bmi);
-    }
-  },
+  
   
   bmiCategory(id) {
     const user = userStore.getUserById(id);
