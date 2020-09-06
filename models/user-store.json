@@ -1,12 +1,13 @@
 {
-  "users" : [
+  "users": [
     {
       "firstName": "Homer",
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "address": ""
+      "address": "123 Main Street, Waterfrord City",
+      "gender": "Male",
       "startingWeight": 120,
       "height": 183
     },
@@ -16,8 +17,21 @@
       "email": "marge@simpson.com",
       "password": "secret",
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "address": "123 Main Street, Waterfrord City",
+      "gender": "Female",
       "startingWeight": 115,
       "height": 165
+    },
+    {
+      "firstName": "Emma",
+      "lastName": "Kidney",
+      "email": "kidneyemma@gmail.com",
+      "password": "sed",
+      "address": "40 ashely drive",
+      "gender": "female",
+      "height": "165",
+      "startingWeight": "90",
+      "id": "d29c0610-f04d-11ea-973b-1fb873f06e73"
     }
   ]
 }
