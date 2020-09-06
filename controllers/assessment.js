@@ -11,13 +11,13 @@ const assessment = {
   index(request, response) {
     logger.debug('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
-    
+    const assessmentId = request.params.id;
     const viewData = {
       title: 'Assessment',
       user: userStore.getUserById(loggedInUser.id),
-      assessment: assessmentStore.getUserAssessments(loggedInUser.id).reverse(),
-      bmi: analytics.bmi(loggedInUser.id),
-      bmiCategory: analytics.bmiCategory(loggedInUser.id),
+      assessment: assessmentStore.getAssessment(assessmentId),
+      bmi: analytics.bmi(loggedInUser.id, assessmentId),
+      bmiCategory: analytics.bmiCategory(loggedInUser.id, assessmentId),
       isIdealWeight: analytics.isIdealWeight(loggedInUser.id)
     };
     response.render('assessment', viewData);

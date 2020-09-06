@@ -1,7 +1,7 @@
 {
   "assessments": [
     {
-      "id": "1e6ed5a0-28fe-4527-8ce8-6cb5c800b5be",
+      "assessmentid": "1e6ed5a0-28fe-4527-8ce8-6cb5c800b5be",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "title": "Marge Simpson",
       "rows": [
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "1e6ed5a0-28fe-4527-8ce8-6cb5c800b5ba",
+      "assessmentid": "1e6ed5a0-28fe-4527-8ce8-6cb5c800b5ba",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "title": "Homer Simpson",
       "rows": [
@@ -35,7 +35,7 @@
           "comment": "NA"
         },
         {
-          "id": "de832370-edf8-11ea-9b83-d5626fe8df49",
+          "assessmentid": "de832370-edf8-11ea-9b83-d5626fe8df49",
           "date": "11.06.2020",
           "weight": "70",
           "chest": "42.0",

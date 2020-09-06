@@ -10,7 +10,7 @@ const analytics = {
   
   bmi(id, assessmentId) {
     const user = userStore.getUserById(id);
-    const assessment = assessmentStore.getUserAssessments(id);
+    const assessment = assessmentStore.getAssessment(assessmentId);
     if (assessment.length === 0) {
       const bmi = user.startingWeight / ((user.height / 100) * (user.height / 100));
       return Math.round(bmi * 100) / 100;
