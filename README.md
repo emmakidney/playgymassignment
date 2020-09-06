@@ -1,37 +1,18 @@
-Welcome to Glitch
-=================
+Student Name		:  Emma Kidney (20074350)
+Deployed Url:		: https://play-gym-emma.glitch.me/  || https://glitch.com/edit/#!/play-gym-emma?path=README.md%3A1%3A0
+Github Repo		: https://github.com/emmakidney/playgymassignment
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+Test assessments loaded from json file consisting of weight, chest, thigh, upper arm, waist, hips.List of all assessments			
+Multiple Assessments associated with multiple users in json file. 
+Form to add more assessments in UX.	
+Current BMI	
+User Model: name, email, password, address, gender, height, startingWeight. 
+Multiple users loaded from json file.		
+Dashboard shows assessments for logged in user.	
+BMI Category
+Ideal Body Weight Indicator.	
+Signup+Login forms allowing new users to signup.	T
+rainer Accounts (preloaded from json).	
+Members can delete individual assessments.		
+			
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-
-Your Project
-------------
-
-### ← README.md
-
-That's this file, where you can tell people what your cool website does and how you built it.
-
-### ← index.html
-
-Where you'll write the content of your website. 
-
-### ← style.css
-
-CSS files add styling rules to your content.
-
-### ← script.js
-
-If you're feeling fancy you can add interactivity to your site with JavaScript.
-
-### ← assets
-
-Drag in `assets`, like images or music, to add them to your project
-
-Made by [Glitch](https://glitch.com/)
--------------------
-
-\ ゜o゜)ノ
