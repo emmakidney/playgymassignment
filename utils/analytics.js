@@ -25,11 +25,11 @@ const analytics = {
     const user = userStore.getUserById(id);
     const assessment = assessmentStore.getUserAssessments(id);
     if (assessment.length === 0) {
-      const bmi = (user.startingWeight / ((user.height) * (user.height)));
-      return bmi;
+      const bmi = ((user.startingWeight / (user.height) * (user.height)) * 1000);
+      return Math.round(bmi);
     } else {
-      const bmi = (assessment.weight/ ((user.height) * (user.height)));
-      return bmi;
+      const bmi = ((assessment.weight/ (user.height) * (user.height)) * 1000);
+      return Math.round(bmi);
     }
   },
   
