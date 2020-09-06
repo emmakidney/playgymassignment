@@ -28,8 +28,8 @@ const analytics = {
       const bmi = Math.round((user.startingWeight / (user.height / 100) * (user.height / 100)));
       return bmi;
     } else {
-      const bmi = Math.round((assessment.weight/ (user.height / 100) * (user.height / 100)));
-      return bmi;
+      const bmi = ((assessment[assessment.length - 1].weight/ (user.height / 100) * (user.height / 100)));
+      return Math.round(bmi);
     }
   },
   
